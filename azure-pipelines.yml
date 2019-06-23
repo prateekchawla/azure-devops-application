@@ -32,6 +32,20 @@ jobs:
       PathtoPublish: 'src/angular7/dist'
       ArtifactName: angular2
   
+  - task: ArtifactoryGenericUpload@1
+    inputs:
+      artifactoryService: 'ElephantJfrog'
+      specSource: 'taskConfiguration'
+      fileSpec: '{
+          "files": [
+            {
+              "pattern": "/*.zip",
+              "target": "az-poc-web-staging-local/"
+            }
+          ]
+        }'
+      failNoOp: true
+      
   - task: Npm@1
     displayName: 'Test Angular'
     inputs:
