@@ -45,7 +45,7 @@ jobs:
           ]
         }'
       failNoOp: true
-      
+
   - task: Npm@1
     displayName: 'Test Angular'
     inputs:
