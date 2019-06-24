@@ -32,6 +32,13 @@ jobs:
       PathtoPublish: 'src/angular7/dist'
       ArtifactName: angular2
   
+  - task: ArtifactoryXrayScan@1
+    inputs:
+      artifactoryService: 'ElephantJfrog'
+      buildName: '$(Build.DefinitionName)'
+      buildNumber: '$(Build.BuildNumber)'
+      allowFailBuild: true
+      
   - task: ArtifactoryGenericUpload@1
     inputs:
       artifactoryService: 'ElephantJfrog'
