@@ -40,7 +40,7 @@ jobs:
       fileSpec: '{
           "files": [
             {
-              "pattern": "/*.zip",
+              "pattern": "angular7/*.zip",
               "target": "az-poc-web-staging-local/"
             }
           ]
